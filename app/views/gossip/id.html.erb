@@ -1,13 +1,4 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <title>TheGossipProject</title>
-  </head>
+
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">The Gossip Project</a>
@@ -28,17 +19,21 @@
         </ul>
     </div>
     </nav>
+    <div class="card">
+      <div class="card-body">
     <h1>T'as gagné petit commère </h1>
+    <br>
     <h2>Voici ton potin : </h2>
-    <p>
-      <% i=params[:id] %>
-      <% g = Gossip.find(i) %>
-     <h3>Titre ==> <%= g.title %></h3>
-      <p>Potin ==> <%= g.content %> </p>
-      <p>Créé le ==> <%= g.created_at %> </p>
-      <p>Auteur ==> <%= g.user.first_name %> </p> 
-      <% user = g.user %>
-      <%= link_to "Clique ici pour voir le profil de son auteur", user_id_path(user.id) %>
-   </p>
+    <br>
+        <% i=params[:id] %>
+        <% g = Gossip.find(i) %>
+      <p><strong>Titre</strong> <br> <%= g.title %></p>
+        <p><strong>Potin </strong><br> <%= g.content %> </p>
+        <p><strong>Créé le </strong><br> <%= g.created_at %> </p>
+        <p><strong>Auteur </strong> <br> <%= g.user.first_name %> </p> 
+        <% user = g.user %>
+        <%= link_to "Clique ici pour voir le profil de son auteur", user_id_path(user.id) %>
+      </div>
+    </div>
    </body>
 </html>

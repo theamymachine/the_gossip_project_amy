@@ -20,15 +20,20 @@
         </ul>
     </div>
     </nav>
+    <div class="card">
+      <div class="card-body">
     <h1> Bienvenue <%= params[:id] %> !  </h1>
+    <br>
     <h2>Voici la liste de potins : </h2>
-<p>
-  <% Gossip.all.each do |gossip|%>
-<p>
-  Author : <%= gossip.user.first_name %>,
-  Title : <%= gossip.title %> ||       
-  <%= link_to "Clique ici pour lire ton potin", gossip_id_path(gossip.id) %>
-  <% end %>
-</p>
+    <br> 
+      <% Gossip.all.each do |gossip|%>
+    <dl>
+      <dt>Author : <%= gossip.user.first_name %></dt> 
+      <dd>Title : <%= gossip.title %> ||       
+      <%= link_to "Clique ici pour lire ton potin", gossip_id_path(gossip.id) %> </dd>
+      <% end %>
+      </dl>
+    </div>
+    </div>
    </body>
 </html>

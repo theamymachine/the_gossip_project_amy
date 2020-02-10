@@ -20,14 +20,23 @@
         </ul>
     </div>
     </nav>
-    <h1>Auteur</h1>
-    <% i=params[:id] %>
-    <% u = User.find(i) %>
-    First name : <%= u.first_name %>
-    <p>Last name : <%= u.last_name %></p>
-    <p>Age : <%= u.age %></p>
-    <p>email : <%= u.email %></p>
-    <p>City : <%= u.city.name %></p>
- </p>
+    <div class="card">
+      <div class="card-body">
+        <h1>Auteur</h1>
+        <% i=params[:id] %>
+        <% u = User.find(i) %>
+        <br>
+        <p><strong>Prénom</strong> <br> <%= u.first_name %></p>
+        <br>
+
+        <p><strong>Nom</strong> <br> <%= u.last_name %></p>
+        <br>
+        <p><strong>Age</strong> <br> <%= u.age %></p>
+        <br>
+        <p><strong>Email</strong> <br> <%= u.email %></p>
+        <br>
+        <p><strong>Ville</strong> <br> <%= u.city.name %></p>
+      </div>
+    </div>
    </body>
 </html>
