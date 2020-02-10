@@ -12,10 +12,11 @@ It's a site for creating cheeky goss' about other people following the THP cours
 
 * To run The Gossip Project: 
 - clone the git file and run a bundle install in terminal
-- run a rails db:create from the route folder 
+- run a rails db:create from the root folder 
 - run rails db:migrate 
 - fire up the server with rails s
-- navigate the gossip project starting from the localhost:3000/static_pages/home page 
+- navigate the gossip project starting from localhost:3000/static_pages/home OR 
+for a more personalised experience, put your name in after the welcome path : localhost:3000/welcome/your_name
 
 * Enjoy ! 
 
