@@ -22,9 +22,9 @@ end
 
 10.times do
   User.create!(
-    first_name: Faker::Name.first_name, 
-    last_name: Faker::Name.last_name,
-    description: Faker::Lorem.sentence(word_count: rand(5..20)),
+    first_name: Faker::Superhero.prefix, 
+    last_name: Faker::Superhero.descriptor,
+    description: Faker::TvShows::TwinPeaks.quote,
     email: Faker::Internet.email,
     age: Faker::Number.between(from: 13, to: 99),
     city: City.all.sample
@@ -33,8 +33,8 @@ end
 
 20.times do
   Gossip.create!(
-    title: Faker::Marketing.buzzwords,
-    content: Faker::ChuckNorris.fact,
+    title: Faker::Movies::StarWars.planet,
+    content: Faker::Movies::HarryPotter.quote,
     user: User.all.sample
     )
 end
