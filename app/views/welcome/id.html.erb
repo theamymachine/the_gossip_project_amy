@@ -28,6 +28,15 @@
         </ul>
     </div>
     </nav>
-    <p> Bienvenue <%= params[:id] %> !  </p>
+    <h1> Bienvenue <%= params[:id] %> !  </h1>
+    <h2>Voici la liste de potins : </h2>
+<p>
+  <% Gossip.all.each do |gossip|%>
+<p>
+  Author : <%= gossip.user.first_name %>,
+  Title : <%= gossip.title %> ||       
+  <%= link_to "Clique ici pour lire ton potin", gossip_id_path(gossip.id) %>
+  <% end %>
+</p>
    </body>
 </html>
