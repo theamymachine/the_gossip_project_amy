@@ -31,12 +31,9 @@
     <h1>T'as gagné petit commère </h1>
     <h2>Voici ton potin : </h2>
     <p>
-      <% Gossip.all.each do |gossip|%>
-    <p>
-       <%= gossip.user.first_name %>
-        : <%= gossip.title %>
-    </p>
-        <% end %>
+      <% i=params[:id] %>
+      <% g = Gossip.find(i) %>
+      <%= g.content %>
    </p>
    </body>
 </html>
