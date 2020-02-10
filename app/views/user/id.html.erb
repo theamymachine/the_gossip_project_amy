@@ -22,23 +22,20 @@
         <li class="nav-item">
             <%= link_to "Team", static_pages_team_path, :class => "nav-link"%>
         </li>
-        <li class="nav-item">    
+        <li class="nav-item">
             <%= link_to "Contact", static_pages_contact_path, :class => "nav-link"%>
         </li>
         </ul>
     </div>
     </nav>
-    <h1>T'as gagné petit commère </h1>
-    <h2>Voici ton potin : </h2>
-    <p>
-      <% i=params[:id] %>
-      <% g = Gossip.find(i) %>
-     <h3>Titre ==> <%= g.title %></h3>
-      <p>Potin ==> <%= g.content %> </p>
-      <p>Créé le ==> <%= g.created_at %> </p>
-      <p>Auteur ==> <%= g.user.first_name %> </p> 
-      <% user = g.user %>
-      <%= link_to "Clique ici pour voir le profil de son auteur", user_id_path(user.id) %>
-   </p>
+    <h1>Auteur</h1>
+    <% i=params[:id] %>
+    <% u = User.find(i) %>
+    First name : <%= u.first_name %>
+    <p>Last name : <%= u.last_name %></p>
+    <p>Age : <%= u.age %></p>
+    <p>email : <%= u.email %></p>
+    <p>City : <%= u.city.name %></p>
+ </p>
    </body>
 </html>
