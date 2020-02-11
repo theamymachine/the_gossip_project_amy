@@ -1,6 +1,11 @@
 
     <div class="card">
       <div class="card-body">
+        <% flash.each do |type, msg| %>
+    <div class="alert alert-success" role="alert">
+    <%= msg %>
+    </div>
+    <% end %>
     <h1>Bienvenue sur TGP ! </h1>
     <br>
     <h2>Voici la liste de potins : </h2>

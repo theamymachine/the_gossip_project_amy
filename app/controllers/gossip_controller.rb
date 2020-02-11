@@ -13,9 +13,10 @@ class GossipController < ApplicationController
   def create 
     @gossip = Gossip.new(user: User.last, title: params[:title],content: params[:content])
     if @gossip.save
-      redirect_to static_pages_home_path
+      redirect_to static_pages_home_path, notice: "Tu as crée un nouveau potin."
     else 
       render 'new'
+      flash.alert = "Il y a un problème, recommence"
     end
   end
 
