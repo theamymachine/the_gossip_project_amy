@@ -1,28 +1,7 @@
 
-    <title>TheGossipProject</title>
-  <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">The Gossip Project</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav">
-        <li class="nav-item active">
-            <%= link_to "Accueil", static_pages_home_path, :class => "nav-link"%>
-        </li>
-        <li class="nav-item">
-            <%= link_to "Team", static_pages_team_path, :class => "nav-link"%>
-        </li>
-        <li class="nav-item">    
-            <%= link_to "Contact", static_pages_contact_path, :class => "nav-link"%>
-        </li>
-        </ul>
-    </div>
-    </nav>
-    <div class="card">
-      <div class="card-body">
-    <h1> Bienvenue <%= params[:id] %> !  </h1>
+<div class="card">
+  <div class="card-body">
+   <h1> Bienvenue <%= params[:id] %> !  </h1>
     <br>
     <h2>Voici la liste de potins : </h2>
     <br> 
@@ -33,7 +12,7 @@
       <%= link_to "Clique ici pour lire ton potin", gossip_id_path(gossip.id) %> </dd>
       <% end %>
       </dl>
+     </div>
     </div>
-    </div>
-   </body>
+  </body>
 </html>

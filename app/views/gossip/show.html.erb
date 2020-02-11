@@ -1,0 +1,19 @@
+
+    <div class="card">
+      <div class="card-body">
+    <h1>T'as gagné petit commère </h1>
+    <br>
+    <h2>Voici ton potin : </h2>
+    <br>
+        <% i=params[:id] %>
+        <% g = Gossip.find(i) %>
+      <p><strong>Titre</strong> <br> <%= g.title %></p>
+        <p><strong>Potin </strong><br> <%= g.content %> </p>
+        <p><strong>Créé le </strong><br> <%= g.created_at %> </p>
+        <p><strong>Auteur </strong> <br> <%= g.user.first_name %> </p> 
+        <% user = g.user %>
+        <%= link_to "Clique ici pour voir le profil de son auteur", user_id_path(user.id) %>
+      </div>
+    </div>
+   </body>
+</html>

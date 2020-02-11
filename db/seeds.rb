@@ -30,6 +30,7 @@ end
     city: City.all.sample
     )
 end
+  User.create!(first_name: "Anonymous", last_name: "Anon", description: "I'm an anonymous person", email: "anonymous@anonymous.com", age: 34, city: City.all.sample )
 
 20.times do
   Gossip.create!(
