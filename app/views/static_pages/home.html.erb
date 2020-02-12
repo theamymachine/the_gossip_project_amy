@@ -1,19 +1,26 @@
 
-    <div class="card">
-      <div class="card-body">
-        <% flash.each do |type, msg| %>
+  <html>
+    <body>
+  <!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="jumbotron">
+  <div class="container">
+    <% flash.each do |type, msg| %>
     <div class="alert alert-success" role="alert">
     <%= msg %>
     </div>
     <% end %>
-    <h1>Bienvenue sur TGP ! </h1>
-    <br>
-    <h2>Voici la liste de potins : </h2>
+    <h1 class="display-3">Bienvenue sur The Gossip Project</h1>
+    <p>Parcoure les potins du site grâce à la liste  ci-dessous, ou lance-toi direct en créant ton propre potin </p>
+    <p><a class="btn btn-primary btn-lg" href="#" role="button">Créer un potin</a></p>
+  </div>
+</div>
+    <div class="card">
+    <div class="card-body">
     <br>
       <% Gossip.all.each do |gossip|%>
     <dl>
       <dt>Author : <%= gossip.user.first_name %></dt> 
-      <dd>Title : <%= gossip.title %> ||       
+      <dd>Title : <%= gossip.title %>        
         <p> <%=link_to "Clique ici pour voir le potin", gossip_path(gossip.id)%> </p> </dd>
       <% end %>
       </dl>
