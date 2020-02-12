@@ -17,8 +17,7 @@
     <p><strong>Email</strong> <br> <%= u.email %></p>
     <br>
     <p><strong>Ville</strong> <br> <%= u.city.name %>
-    <% @city = City.find(params[:id]) %>
-    <%= link_to "Clique ici pour voir les potins de cette ville", city_path(@city.id) %>
+    <%= link_to "Clique ici pour voir les potins de cette ville", city_path(u.city.id) %>
 
     </p>
   </div>

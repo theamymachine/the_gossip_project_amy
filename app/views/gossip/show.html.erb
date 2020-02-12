@@ -5,14 +5,31 @@
     <br>
     <h2>Voici ton potin : </h2>
     <br>
-        <% i=params[:id] %>
+        <% i = params[:id] %>
         <% g = Gossip.find(i) %>
       <p><strong>Titre</strong> <br> <%= g.title %></p>
         <p><strong>Potin </strong><br> <%= g.content %> </p>
         <p><strong>Créé le </strong><br> <%= g.created_at %> </p>
-        <p><strong>Auteur </strong> <br> <%= g.user.first_name %> </p> 
+        <p><strong>Auteur </strong> <br> <%= g.user.first_name %> </p>
         <% user = g.user %>
-        <%= link_to "Clique ici pour voir le profil de son auteur", user_id_path(user.id) %>
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary"> 
+          <%= link_to "Profil de l'auteur", user_id_path(user.id) %> Profil de l'auteur
+        </button>
+        <br>
+        <br>
+        <div class="form-group">
+        <button type="submit" class="btn btn-primary"> 
+          <%= link_to "Modifier le gossip", edit_gossip_path(g.id) %> Modifier le gossip
+        </button>
+        <br>
+        <br>
+        <div class="form-group">
+          <button type="submit" class="btn btn-danger"> 
+            <p> <%= link_to "Supprimer le gossip", g,  :method => "delete", :title => "gossip supprimé" %> </p> 
+          </button>
+        </div>
       </div>
     </div>
    </body>

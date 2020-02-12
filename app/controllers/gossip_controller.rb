@@ -21,13 +21,34 @@ class GossipController < ApplicationController
   end
 
   def edit
-    # Méthode qui récupère le potin concerné et l'envoie à la view edit (edit.html.erb) pour affichage dans un formulaire d'édition
+    @gossip = Gossip.find(params[:id])
   end
 
   def update
-    # Méthode qui met à jour le potin à partir du contenu du formulaire de edit.html.erb, soumis par l'utilisateur
-    # pour info, le contenu de ce formulaire sera accessible dans le hash params
-    # Une fois la modification faite, on redirige généralement vers la méthode show (pour afficher le potin modifié)
+    @gossip = Gossip.find(params[:id])
+    if @gossip.update(gossip_params)
+      redirect_to @gossip
+    else
+      render :edit
+      flash.alert = "Il y a un problème, recommence"
+    end
   end
 
+  def destroy
+    @gossip = Gossip.find(params[:id])
+    if @gossip.destroy
+      redirect_to static_pages_home_path
+    else
+      render :edit
+      flash.alert = "Il y a un problème, recommence"
+    end
+  end
+
+  private 
+
+  def gossip_params
+    params.require(:gossip).permit(:title, :content)
+  end 
+
 end
+ 
